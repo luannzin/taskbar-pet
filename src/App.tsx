@@ -1,8 +1,8 @@
-import { Button } from "./components/ui/button";
+import { GameCanvas } from "./components/GameCanvas";
 import "./index.css";
 
 const App = () => {
-	return <Button>Click me</Button>;
+	return <GameCanvas />;
 };
 
 export { App };
