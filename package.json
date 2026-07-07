@@ -19,6 +19,7 @@
     "@tauri-apps/plugin-opener": "^2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cnfast": "^0.0.8",
     "lucide-react": "^1.23.0",
     "pixi.js": "^8.19.0",
     "react": "^19.1.0",
