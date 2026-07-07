@@ -15,7 +15,7 @@
 				"title": "taskbar-pet",
 				"width": 500,
 				"height": 256,
-				"transparent": false,
+				"transparent": true,
 				"decorations": false,
 				"alwaysOnTop": true,
 				"resizable": false,

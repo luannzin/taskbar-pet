@@ -23,9 +23,6 @@ export async function createEngine(): Promise<Engine> {
 		antialias: false,
 		autoDensity: true,
 		resolution: window.devicePixelRatio || 1,
-		// Non-premultiplied alpha stops the transparent webkit2gtk window from
-		// accumulating each frame's alpha (the animation "trails" on Linux).
-		premultipliedAlpha: false,
 	});
 
 	const scene = new Container();

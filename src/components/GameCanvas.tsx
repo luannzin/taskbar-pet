@@ -3,7 +3,7 @@ import type { FederatedPointerEvent } from "pixi.js";
 import { useEffect, useRef } from "react";
 import { createEngine } from "../game/engine";
 import { createPet } from "../game/pet";
-import { loadScene } from "../game/scene";
+import { drawDefaultBackdrop, loadScene } from "../game/scene";
 
 const PET_MANIFEST = "/assets/pets/cat/pet.json";
 const SCENE_MANIFEST = "/assets/scenes/room/scene.json";
@@ -27,7 +27,14 @@ export function GameCanvas() {
 			const host = hostRef.current;
 			host?.appendChild(engine.app.canvas);
 
-			await loadScene(engine.scene, SCENE_MANIFEST);
+			const layers = await loadScene(engine.scene, SCENE_MANIFEST);
+			if (layers.length === 0) {
+				drawDefaultBackdrop(
+					engine.scene,
+					engine.app.screen.width,
+					engine.app.screen.height,
+				);
+			}
 			const pet = await createPet(PET_MANIFEST);
 			if (disposed) {
 				engine.app.destroy(true);
